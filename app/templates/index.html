@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>FinSight Analytics</title>
+
+    <link rel="stylesheet"
+          href="/static/css/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>📊 FinSight Analytics</h1>
+
+<p class="subtitle">
+AI Powered Financial Intelligence & Trial Balance Analytics Platform
+</p>>
+
+    <div class="card">
+
+        <form action="/upload"
+              method="post"
+              enctype="multipart/form-data">
+
+            <div class="form-group">
+
+                <label>Financial Year Trial Balance</label>
+
+                <input
+                    type="file"
+                    name="fy_file"
+                    required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Current Trial Balance</label>
+
+                <input
+                    type="file"
+                    name="current_file"
+                    required>
+
+            </div>
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label>NDTL</label>
+
+                    <input
+                        type="number"
+                        step="0.01"
+                        name="ndtl"
+                        required>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>CRR Percentage</label>
+
+                    <input
+                        type="number"
+                        step="0.01"
+                        value="3"
+                        name="crr_percent"
+                        required>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>SLR Percentage</label>
+
+                    <input
+                        type="number"
+                        step="0.01"
+                        value="18"
+                        name="slr_percent"
+                        required>
+
+                </div>
+
+            </div>
+
+            <button type="submit">
+
+                Generate Dashboard
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

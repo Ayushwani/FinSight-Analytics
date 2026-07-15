@@ -1,0 +1,793 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    background:#edf2f7;
+
+    font-family:Arial,Helvetica,sans-serif;
+
+}
+
+.container{
+
+    width:96%;
+
+    max-width:1600px;
+
+    margin:auto;
+
+    padding:30px;
+
+}
+.report-info{
+
+    margin-bottom:30px;
+
+}
+
+.report-box{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+}
+
+.report-box h3{
+
+    color:#1f4e79;
+
+    margin-bottom:10px;
+
+}
+
+.report-box p{
+
+    color:#555;
+
+    line-height:1.8;
+
+}
+
+.hero-header{
+
+    text-align:center;
+
+    margin-bottom:35px;
+
+}
+
+.hero-header h1{
+
+    color:#123b67;
+
+    font-size:52px;
+
+    font-weight:700;
+
+    margin-bottom:10px;
+
+}
+
+.hero-header p{
+
+    color:#666;
+
+    font-size:20px;
+
+}
+
+/* ================= KPI GRID ================= */
+
+.dashboard-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+    gap:22px;
+
+    margin-bottom:35px;
+
+}
+
+/* ================= KPI CARD ================= */
+
+.card{
+
+    background:white;
+
+    border-top:5px solid #2563eb;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 15px 30px rgba(0,0,0,.15);
+
+}
+
+.card h3{
+
+    color:#555;
+
+    font-size:28px;
+
+    margin-bottom:18px;
+
+}
+
+.card h2{
+
+    color:#2563eb;
+
+    font-size:26px;
+
+    font-weight:bold;
+
+    line-height:1.3;
+
+    white-space:normal;
+
+    word-break:normal;
+
+    overflow-wrap:anywhere;
+
+}
+
+/* ================= CHART CARD ================= */
+
+.chart-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:30px;
+
+    margin-top:30px;
+
+    margin-bottom:35px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+}
+
+.chart-card h2{
+
+    color:#2563eb;
+
+    margin-bottom:25px;
+
+    font-size:26px;
+
+}
+
+/* ================= TABLE ================= */
+
+.table-title{
+
+    color:#2563eb;
+
+    margin-bottom:25px;
+
+}
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin-top:10px;
+
+}
+
+th{
+
+    background:#2563eb;
+
+    color:white;
+
+    padding:16px;
+
+    text-align:left;
+
+    font-size:20px;
+
+}
+
+td{
+
+    padding:15px;
+
+    border-bottom:1px solid #ddd;
+
+    font-size:18px;
+
+}
+
+tr:hover{
+
+    background:#f4f7fb;
+
+}
+
+/* ================= BUTTON ================= */
+
+button{
+
+    width:100%;
+
+    padding:18px;
+
+    margin-top:30px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#2563eb;
+
+    color:white;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    background:#1d4ed8;
+
+}
+
+/* ================= FORM ================= */
+
+.form-group{
+
+    margin-bottom:20px;
+
+}
+
+.form-row{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:20px;
+
+}
+
+label{
+
+    display:block;
+
+    font-weight:bold;
+
+    margin-bottom:8px;
+
+}
+
+input[type="number"]{
+
+    width:100%;
+
+    padding:12px;
+
+    border:1px solid #ccc;
+
+    border-radius:8px;
+
+    font-size:15px;
+
+}
+
+input[type="file"]{
+
+    width:100%;
+
+    padding:10px;
+
+}
+
+/* ================= PLOTLY ================= */
+
+.plotly-graph-div{
+
+    width:100%!important;
+
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:1200px){
+
+.dashboard-grid{
+
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+
+}
+
+.card h2{
+
+font-size:32px;
+
+}
+
+}
+
+@media(max-width:900px){
+
+.form-row{
+
+grid-template-columns:1fr;
+
+}
+
+.dashboard-grid{
+
+grid-template-columns:1fr;
+
+}
+
+h1{
+
+font-size:34px;
+
+}
+
+}
+.two-column{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:25px;
+
+    margin-bottom:30px;
+
+}
+
+.chart-card{
+
+    background:white;
+
+    border-radius:15px;
+
+    padding:25px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+}
+
+.chart-card h2{
+
+    margin-bottom:20px;
+
+    color:#1f4e79;
+
+}
+
+.table-title{
+
+    margin-bottom:20px;
+
+    color:#1f4e79;
+
+}
+
+@media(max-width:1000px){
+
+    .two-column{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+/* ===========================================
+   Executive Summary
+=========================================== */
+
+.summary-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:30px;
+
+    margin-bottom:35px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+}
+
+.summary-card h2{
+
+    color:#1f4e79;
+
+    margin-bottom:25px;
+
+}
+
+.summary-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:18px;
+
+}
+
+.summary-item{
+
+    border-left:6px solid #2563eb;
+
+    background:#fbfcfe;
+
+    display:flex;
+
+    align-items:center;
+
+    background:#f8fafc;
+
+    padding:18px;
+
+    border-left:6px solid #2563eb;
+
+    border-radius:12px;
+
+    transition:.3s;
+
+}
+
+.summary-item:hover{
+
+    transform:translateY(-3px);
+
+    background:#eef5ff;
+
+}
+
+.summary-icon{
+
+    font-size:32px;
+
+    margin-right:18px;
+
+}
+
+.summary-text h4{
+
+    color:#1f4e79;
+
+    margin-bottom:6px;
+
+}
+
+.summary-text p{
+
+    color:#555;
+
+    font-size:15px;
+
+    line-height:1.5;
+
+}
+/* ==========================================
+   FINANCIAL HEALTH SCORE
+========================================== */
+
+.health-banner{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:35px;
+
+    margin-bottom:35px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+}
+
+.health-header{
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+.health-emoji{
+
+    font-size:60px;
+
+    margin-right:20px;
+
+}
+
+.health-header h2{
+
+    font-size:34px;
+
+    color:#1f4e79;
+
+    margin-bottom:8px;
+
+}
+
+.health-header p{
+
+    color:#666;
+
+    font-size:18px;
+
+}
+
+.health-score{
+
+    display:flex;
+
+    align-items:flex-end;
+
+}
+
+.score-number{
+
+    font-size:72px;
+
+    font-weight:bold;
+
+    line-height:1;
+
+}
+
+.score-outof{
+
+    font-size:28px;
+
+    margin-left:8px;
+
+    margin-bottom:12px;
+
+    color:#777;
+
+}
+
+.health-rating{
+
+    color:white;
+
+    padding:16px 28px;
+
+    border-radius:40px;
+
+    font-size:24px;
+
+    font-weight:bold;
+
+}
+
+@media(max-width:900px){
+
+.health-banner{
+
+flex-direction:column;
+
+text-align:center;
+
+gap:25px;
+
+}
+
+.health-header{
+
+flex-direction:column;
+
+}
+
+.health-emoji{
+
+margin:0 0 15px 0;
+
+}
+/* ================= FOOTER ================= */
+
+footer{
+
+    margin-top:40px;
+
+    padding:25px;
+
+    text-align:center;
+
+    background:#1f4e79;
+
+    color:white;
+
+    border-radius:15px;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+}
+
+footer strong{
+
+    font-size:22px;
+
+    color:#ffffff;
+
+}
+.report-meta{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:20px;
+
+    margin:25px 0;
+
+    background:white;
+
+    padding:20px;
+
+    border-radius:15px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+}
+
+.report-meta div{
+
+    flex:1;
+
+    text-align:center;
+
+}
+
+.report-meta strong{
+
+    color:#1f4e79;
+
+    font-size:18px;
+
+}
+
+.report-meta div{
+
+    font-size:15px;
+
+    color:#555;
+
+}
+
+@media(max-width:900px){
+
+.report-meta{
+
+flex-direction:column;
+
+}
+
+}
+.footer{
+
+    margin-top:50px;
+
+    text-align:center;
+
+    padding:30px;
+
+    background:white;
+
+    border-radius:15px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+}
+
+.footer h3{
+
+    color:#1f4e79;
+
+    margin-bottom:10px;
+
+}
+
+.footer p{
+
+    color:#666;
+
+    margin:6px 0;
+
+}
+.performance-strip{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    margin-bottom:35px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+}
+
+.performance-strip h2{
+
+    color:#1f4e79;
+
+    margin-bottom:20px;
+
+}
+
+.performance-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:15px;
+
+}
+
+.performance-item{
+
+    background:#eef5ff;
+
+    border-left:5px solid #2563eb;
+
+    padding:15px;
+
+    border-radius:10px;
+
+    font-weight:bold;
+
+    color:#333;
+
+}
+
+}

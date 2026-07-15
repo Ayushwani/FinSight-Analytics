@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>FinSight Analytics | Financial Intelligence Platform</title>
+
+    <link rel="stylesheet"
+          href="/static/css/style.css">
+
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="hero-header">
+
+    <h1>📊 FinSight Analytics</h1>
+
+    <p class="hero-subtitle">
+        AI Powered Financial Intelligence Platform
+    </p>
+
+    <div class="hero-description">
+
+        <h3>Financial Analysis Report</h3>
+
+        <p>
+            Intelligent comparison of Financial Year and Current Trial Balance with
+            automated KPI calculations, ratio analysis, liquidity analysis,
+            profitability insights, compliance verification and AI generated
+            financial recommendations.
+        </p>
+
+    </div>
+
+</div>
+<div class="report-meta">
+
+    <div>
+
+        <strong>Platform</strong><br>
+
+        FinSight Analytics
+
+    </div>
+
+    <div>
+
+        <strong>Report Generated</strong><br>
+
+        {{ generated_time }}
+
+    </div>
+
+    <div>
+
+        <strong>Version</strong><br>
+
+        v1.0
+
+    </div>
+
+</div>
+    <!-- ================= HEALTH SCORE ================= -->
+
+<div class="health-banner">
+
+    <div class="health-header">
+
+        <span class="health-emoji">
+            {{ health["emoji"] }}
+        </span>
+
+        <div>
+
+            <h2>Executive Financial Score</h2>
+
+            <p>
+                AI Generated Performance Assessment
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="health-score">
+
+        <span
+            class="score-number"
+            style="color:{{ health['color'] }}">
+
+            {{ health["score"] }}
+
+        </span>
+
+        <span class="score-outof">
+            /100
+        </span>
+
+    </div>
+
+    <div
+        class="health-rating"
+        style="background:{{ health['color'] }};">
+
+        {{ health["rating"] }}
+
+    </div>
+
+</div>
+
+<div class="performance-strip">
+
+    <h2>
+
+        Overall Performance Summary
+
+    </h2>
+
+    <div class="performance-grid">
+
+        {% for item in performance %}
+
+        <div class="performance-item">
+
+            {{ item }}
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+    <!-- ================= KPI SECTION ================= -->
+
+    <div class="dashboard-grid">
+
+        <div class="card">
+            <h3>💰 Total Deposits</h3>
+            <h2>{{ analysis["Current Deposits"] }}</h2>
+        </div>
+
+        <div class="card">
+            <h3>🏦Total Advances/ Loans</h3>
+            <h2>{{ analysis["Current Loans"] }}</h2>
+        </div>
+
+        <div class="card">
+            <h3>📈Net Profit</h3>
+            <h2>{{ analysis["Current Profit"] }}</h2>
+        </div>
+
+        <div class="card">
+            <h3> 📊Credit Deposit Ratio</h3>
+            <h2>{{ analysis["CD Ratio"] }}</h2>
+        </div>
+
+        <div class="card">
+            <h3>📥Deposit Growth Rate</h3>
+            <h2>{{ analysis["Deposit Growth"] }}</h2>
+        </div>
+
+        <div class="card">
+            <h3>📤Loan Growth Rate</h3>
+            <h2>{{ analysis["Loan Growth"] }}</h2>
+        </div>
+
+        <div class="card">
+            <h3>📈Share Capital Growth</h3>
+            <h2>{{ analysis["Share Growth"] }}</h2>
+        </div>
+
+        <div class="card">
+            <h3>🏛Net Working Capital</h3>
+            <h2>{{ analysis["Working Capital"] }}</h2>
+        </div>
+
+    </div>
+
+    <!-- ================= COMPARISON CHART ================= -->
+
+    <div class="chart-card">
+
+        <h2>📊Financial Performance Comparison</h2>
+
+        {{ comparison_chart|safe }}
+
+    </div>
+
+    <!-- ================= TWO COLUMN ================= -->
+
+    <div class="two-column">
+
+        <div class="chart-card">
+
+            <h2>📈 Growth Performance Analysis</h2>
+
+            {{ growth_chart|safe }}
+
+        </div>
+
+        <div class="chart-card">
+
+            <h2>💼 Liquidity Composition</h2>
+
+            {{ liquidity_chart|safe }}
+
+        </div>
+
+    </div>
+
+    <!-- ================= EXECUTIVE SUMMARY ================= -->
+
+    <div class="summary-card">
+
+        <h2>📋 Executive Financial Summary</h2>
+
+        <div class="summary-grid">
+
+            {% for item in summary %}
+
+            <div class="summary-item">
+
+                <div class="summary-icon">
+
+                    {{ item.icon }}
+
+                </div>
+
+                <div class="summary-text">
+
+                    <h4>{{ item.title }}</h4>
+
+                    <p>{{ item.message }}</p>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+    <!-- ================= AI INSIGHTS ================= -->
+
+<div class="summary-card">
+
+    <h2>🤖 AI Financial Insights</h2>
+
+    <div class="summary-grid">
+
+        {% for insight in insights %}
+
+        <div class="summary-item">
+
+            <div class="summary-icon">
+                💡
+            </div>
+
+            <div class="summary-text">
+
+                <p>{{ insight }}</p>
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+    <!-- ================= COMPLIANCE ================= -->
+
+    <div class="dashboard-grid">
+
+        <div class="card">
+
+            <h3>🏦 Cash Reserve Ratio Position/ CRR</h3>
+
+            <h2>{{ analysis["Available CRR"] }}</h2>
+
+        </div>
+
+        <div class="card">
+
+            <h3>🏛 Statutory Liquidity Position / SLR</h3>
+
+            <h2>{{ analysis["Available SLR"] }}</h2>
+
+        </div>
+
+        <div class="card">
+
+            <h3>💵 Cash Balance</h3>
+
+            <h2>{{ analysis["Cash"] }}</h2>
+
+        </div>
+
+        <div class="card">
+
+            <h3>📦 Investment Portfolio</h3>
+
+            <h2>{{ analysis["Investments"] }}</h2>
+
+        </div>
+
+    </div>
+
+    <!-- ================= TABLE ================= -->
+
+    <div class="card">
+
+        <h2 class="table-title">
+
+            Detailed Financial Report
+
+        </h2>
+
+        <table>
+
+            <tr>
+
+                <th>Particular</th>
+
+                <th>Value</th>
+
+            </tr>
+
+            {% for key,value in analysis.items() %}
+
+            <tr>
+
+                <td>{{ key }}</td>
+
+                <td>{{ value }}</td>
+
+            </tr>
+
+            {% endfor %}
+
+        </table>
+
+    </div>
+
+    <button onclick="window.print()">
+
+    🖨 Print Report
+
+</button>
+
+    <a href="/">
+
+        <button>
+
+            Analyze Another Trial Balance
+
+        </button>
+
+    </a>
+
+</div>
+<footer>
+
+    <p>
+
+        <strong>FinSight Analytics</strong>
+
+        <br>
+
+        AI-Powered Financial Intelligence Platform
+
+        <br><br>
+
+    </p>
+
+</footer>
+<footer class="footer">
+
+    <h3>
+
+        FinSight Analytics
+
+    </h3>
+
+    <p>
+
+        AI Powered Financial Intelligence Platform
+
+    </p>
+
+    <p>
+
+        Version 1.0
+
+    </p>
+
+    <p>
+
+        Designed & Developed by
+        <strong>Ayush Wani</strong>
+
+    </p>
+
+</footer>
+</body>
+
+</html>
